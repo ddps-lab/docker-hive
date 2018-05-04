@@ -18,5 +18,12 @@ RUN rm mysql-connector-java-8.0.11.tar.gz
 ENV HIVE_HOME /usr/local/hive
 ENV PATH $HIVE_HOME/bin:$PATH
 
+ADD hive-site.xml $HIVE_HOME/conf/hive-site.xml
+
+COPY bootstrap.sh /etc/bootstrap.sh
+RUN chown root.root /etc/bootstrap.sh
+RUN chmod 700 /etc/bootstrap.sh
+
 EXPOSE 10000
 
+ENTRYPOINT ["/etc/bootstrap.sh"]
