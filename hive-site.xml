@@ -6,7 +6,7 @@
    </property>
    <property>
       <name>javax.jdo.option.ConnectionDriverName</name>
-      <value>com.mysql.jdbc.Driver</value>
+      <value>com.mysql.cj.jdbc.Driver</value>
       <description>MySQL JDBC driver class</description>
    </property>
    <property>
